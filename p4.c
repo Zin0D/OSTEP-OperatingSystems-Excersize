@@ -3,6 +3,8 @@
 #include <unistd.h> 
 #include <string.h>
 #include <sys/wait.h>
+#include <fcntl.h>
+#include <sys/stat.h>
 
 int main(int argc, char *argv[]){
     printf("hello (pid:%d)\n", getpid());
