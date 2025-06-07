@@ -19,7 +19,7 @@ int main(int argc , char argv[]){
         printf("Child Process: %d | HELLO!!\n\r", getpid());
     } else {
         rc_wait = waitpid(fc, NULL, NULL);
-        printf("Parent of %d , PARENT:%d | GOODBYE!! \n\r", rc, getpid());
+        printf("Parent of %d , PARENT:%d | GOODBYE!! \n\r", fc, getpid());
     }
     return(0);
 }
