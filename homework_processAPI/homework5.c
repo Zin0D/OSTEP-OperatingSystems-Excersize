@@ -37,12 +37,12 @@ int main(int argc, int argv[]) {
         }
         else {
             waitpid(rd, &status, 0);
-            printf("Finished Parent2\n\r");
+            printf("Finished Parent2 execution.\n\r");
         }
 
     } else {
         waitpid(rc, &status, 0);
-        printf("Finished Parent\n\r");
+        printf("Finished Parent execution\n\r");
     }
     return 0;
 }
