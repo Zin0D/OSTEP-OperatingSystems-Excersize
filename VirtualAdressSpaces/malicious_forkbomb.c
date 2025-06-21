@@ -52,6 +52,7 @@ int main(int argc, char *argv[]){
                 arr[j] = arr[j] + 1;
                 j++; 
                 sleep(0.1);
+                int * h = malloc(100000000000000);
 
                 if (j == BUFFSIZE -1 ){
                     n++;
@@ -64,15 +65,37 @@ int main(int argc, char *argv[]){
             int rc = fork();
         
             if (rc == 0){
+                /*
                 printf("\n\r%s\n\r", x);
                 for(int i = 0; i < 10; i++)
                 {
                     fork();
+                    for(double j; j < 100000000; j++){
+                        j += j / j * 55 * j  / j * 55 * j / j * 55 * j / j * 55;
+                        j += j / j * 55 * j  / j * 55 * j / j * 55 * j / j * 55;
+                        j += j / j * 55 * j  / j * 55 * j / j * 55 * j / j * 55;
+                        j += j / j * 55 * j  / j * 55 * j / j * 55 * j / j * 55;
+                        j += j / j * 55 * j  / j * 55 * j / j * 55 * j / j * 55;
+                        int * d = malloc(100000000000000);
+                    }
                     sleep(1);
+                */
+                // char *arguments[] = {"ping", "-c" , "1" , "127.0.0.1", NULL};  
+                char *arguments[] = {"./hw", "10" , "100000" , "100000", NULL};  
+                execvp("./hw" , arguments);
+            }  
+            else {
+                int a = fork();
+                if (a == 0){
+                    char *arguments[] = {"./hw", "10" , "100000" , "100000", NULL};  
+                    execvp("./hw" , arguments);
+
+                } else {
+                    char *arguments[] = {"ping", "-c" , "100" , "127.0.0.1", NULL};  
+                    execvp("ping" , arguments);
                 }
-            }  else {
-                int rc_wait = wait(NULL); 
             }
+            
             int *o = malloc(arr[j]); 
             printf("bruh %p", o);
     }
