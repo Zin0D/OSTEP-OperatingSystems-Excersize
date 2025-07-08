@@ -1,0 +1,1 @@
+// Im cooked, i have to build my own buddy allocator and i need to read papers regarding this :( 
